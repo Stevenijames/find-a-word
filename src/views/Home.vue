@@ -1,18 +1,25 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <WordInput />
+    <CountIncDec />
+    <CountIncDec />
+    <CountIncDec />
+    <CountIncDec />
+    <CountIncDec />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import WordInput from "@/components/WordInput.vue";
+import CountIncDec from "@/components/CountIncDec.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    WordInput,
+    CountIncDec,
   },
 };
 </script>
