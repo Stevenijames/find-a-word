@@ -3,10 +3,6 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <WordInput />
     <CountIncDec />
-    <CountIncDec />
-    <CountIncDec />
-    <CountIncDec />
-    <CountIncDec />
   </div>
 </template>
 
