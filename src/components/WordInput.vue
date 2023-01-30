@@ -11,7 +11,7 @@
     />
     <button @click="resetSearch">Reset</button>
     <p>Definition for Word: {{ typedWord }}</p>
-    <button @click="getDefinition">search</button>
+    <button @click="getDefinition">Search</button>
     <section
       class="definition"
       v-for="definition in wordDefinitions"
@@ -22,15 +22,17 @@
         <li
           v-for="shortDefinition in definition.shortDefinitions"
           :key="shortDefinition"
+          :style="styleObject"
         >
+          >
           {{ shortDefinition }}
         </li>
       </ul>
     </section>
-    <p>{{ numsArray[0] }}</p>
+    <!-- <p>{{ numsArray[0] }}</p>
     <p v-for="abc in numsArray" :key="abc">
       {{ abc }}
-    </p>
+    </p> -->
   </div>
 </template>
 
@@ -43,7 +45,11 @@ export default {
     return {
       typedWord: "",
       wordDefinitions: [],
-      numsArray: [1, 4, 10, 11],
+      styleObject: {
+        color: "green",
+        fontSize: "20px",
+      },
+      // numsArray: [1, 4, 10, 11],
     };
   },
   methods: {
@@ -63,7 +69,7 @@ export default {
         });
         this.wordDefinitions = formattedData;
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     },
     resetSearch() {
@@ -75,8 +81,11 @@ export default {
 </script>
 <style scoped>
 .definition {
-  border: 1px solid black;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  border: 2px solid #d3d3d3;
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 2rem;
+  list-style-type: none;
 }
 </style>
